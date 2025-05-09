@@ -14,7 +14,7 @@ module DataMapper
         if value.nil?
           nil
         elsif value.is_a?(::String)
-          ::YAML.load(value)
+          ::YAML.unsafe_load(value)
         else
           raise ArgumentError, '+value+ of a property of YAML type must be nil or a String'
         end
